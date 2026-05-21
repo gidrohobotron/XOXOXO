@@ -17,7 +17,8 @@ def main():
     while True:
         print("\n" + format_board(board) + "\n")
         move = input(
-            f"Гравець {current}, вкажіть хід (рядок,стовпець) 1-3 або 'q' для виходу: "
+            f"Гравець {current}, вкажіть хід (рядок,стовпець) 1-3 або "
+            f"'q' для виходу: "
         ).strip()
         if move.lower() == "q":
             print("Гра завершена.")
