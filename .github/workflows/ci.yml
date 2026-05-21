@@ -21,15 +21,7 @@ jobs:
         run: |
           python --version
           python -c "import sys, pprint; pprint.pprint(sys.path)"
-          python - <<'PY'
-          import os, sys
-          print('PWD:', os.getcwd())
-          print('ROOT files:')
-          for root, dirs, files in os.walk('.', topdown=True):
-              print(root)
-              for f in files[:20]:
-                  print('  ', f)
-          PY
+          python -c "import os; print('PWD:', os.getcwd()); print('ROOT files:'); print('\n'.join(os.listdir('.')[:200]))"
           ls -R
       - name: Run tests
         run: pytest -q
