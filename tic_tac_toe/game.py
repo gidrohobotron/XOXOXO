@@ -2,14 +2,17 @@ from typing import List, Optional, Tuple
 
 Board = List[List[str]]
 
+
 def new_board() -> Board:
     return [[" " for _ in range(3)] for _ in range(3)]
+
 
 def make_move(board: Board, row: int, col: int, mark: str) -> bool:
     if board[row][col] == " ":
         board[row][col] = mark
         return True
     return False
+
 
 def check_winner(board: Board) -> Optional[str]:
     lines = []
@@ -23,11 +26,14 @@ def check_winner(board: Board) -> Optional[str]:
             return line[0]
     return None
 
+
 def is_full(board: Board) -> bool:
     return all(cell != " " for row in board for cell in row)
 
-def available_moves(board: Board) -> List[Tuple[int,int]]:
-    return [(r,c) for r in range(3) for c in range(3) if board[r][c] == " "]
+
+def available_moves(board: Board) -> List[Tuple[int, int]]:
+    return [(r, c) for r in range(3) for c in range(3) if board[r][c] == " "]
+
 
 def format_board(board: Board) -> str:
     rows = []
