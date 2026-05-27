@@ -44,32 +44,6 @@ python -m pytest -v
 **Python version:** 3.11
 **Triggers:** Automatically on push/PR
 
-## Pre-commit hooks
-
-We added `.pre-commit-config.yaml` with the following hooks:
-
-- `black` — code formatter
-- `isort` — import sorting (Black profile)
-- `flake8` — linting
-- `pytest` (local) — optional hook that runs tests on commit
-
-Installation and usage:
-
-```powershell
-# install dev deps
-pip install -r requirements.txt
-
-# install pre-commit hooks for this repo
-pre-commit install
-
-# run hooks against all files once
-pre-commit run --all-files
-```
-
-Notes:
-- The pytest hook runs tests on each commit and may slow down commits; consider enabling it only for major changes or CI.
-- If you prefer not to add `pre-commit` to `requirements.txt`, install it globally or in your dev environment.
-
 ## Common Issues & Fixes
 
 ### ModuleNotFoundError: No module named 'tic_tac_toe'
